@@ -82,13 +82,13 @@ class Cell {
             this.neighborCount = -1
             return
         }
-        var total = 0
-        for (var xoff = -1; xoff <= 1; xoff++) {
-            for (var yoff = -1; yoff <= 1; yoff++) {
-                var i = this.i + xoff
-                var j = this.j + yoff
+        let total = 0
+        for (let xoff = -1; xoff <= 1; xoff++) {
+            for (let yoff = -1; yoff <= 1; yoff++) {
+                let i = this.i + xoff
+                let j = this.j + yoff
                 if (i > -1 && i < cols && j > -1 && j < rows) {
-                    var neighbor = grid[i][j]
+                    let neighbor = grid[i][j]
                     if (neighbor.bee) total++
                 }
             }
@@ -96,12 +96,12 @@ class Cell {
         this.neighborCount = total
     }
     floodFill() {
-        for (var xoff = -1; xoff <= 1; xoff++) {
-            for (var yoff = -1; yoff <= 1; yoff++) {
-                var i = this.i + xoff
-                var j = this.j + yoff
+        for (let xoff = -1; xoff <= 1; xoff++) {
+            for (let yoff = -1; yoff <= 1; yoff++) {
+                let i = this.i + xoff
+                let j = this.j + yoff
                 if (i > -1 && i < cols && j > -1 && j < rows) {
-                    var neighbor = grid[i][j]
+                    let neighbor = grid[i][j]
                     if (!neighbor.bee && !neighbor.revealed) neighbor.reveal()
                 }
             }
